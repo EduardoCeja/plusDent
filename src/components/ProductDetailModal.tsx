@@ -123,7 +123,7 @@ export default function ProductDetailModal({ open, product, onClose }: Props) {
                 alt={product.title}
                 className={[
                   "h-52 w-full sm:h-64 md:h-[360px]",
-                  /prevencion-limpieza\/[123]\.png$/.test(product.image)
+                  /ortodoncia\/[123]\.png$/.test(product.image)
                     ? "object-contain p-6"
                     : "object-cover",
                 ].join(" ")}

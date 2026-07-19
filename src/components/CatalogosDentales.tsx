@@ -63,7 +63,7 @@ const CATEGORIES: Category[] = [
 ];
 
 const IMAGE_COUNTS: Record<string, number> = {
-  "prevencion-limpieza": 7,
+  "prevencion-limpieza": 4,
 };
 
 function imagesFrom(slug: string) {
@@ -72,7 +72,7 @@ function imagesFrom(slug: string) {
 }
 
 const PRODUCT_OVERRIDES: Record<string, Partial<ProductDetail>> = {
-  "prevencion-limpieza-1": {
+  "ortodoncia-1": {
     title: "Arco Ortodóntico Ni-Ti Superelástico Redondo",
     description:
       "El arco Ni-Ti superelástico proporciona una fuerza constante y controlada, ideal para la alineación inicial, ofreciendo comodidad al paciente y eficiencia clínica.",
@@ -89,7 +89,7 @@ const PRODUCT_OVERRIDES: Record<string, Partial<ProductDetail>> = {
       ],
     },
   },
-  "prevencion-limpieza-2": {
+  "ortodoncia-2": {
     title: "Arco Ortodóntico Ni-Ti Superelástico Rectangular",
     description:
       "El arco Ni-Ti superelástico proporciona una fuerza constante y controlada, ideal para la alineación inicial, ofreciendo comodidad al paciente y eficiencia clínica.",
@@ -112,7 +112,7 @@ const PRODUCT_OVERRIDES: Record<string, Partial<ProductDetail>> = {
       ],
     },
   },
-  "prevencion-limpieza-3": {
+  "ortodoncia-3": {
     title: "Arco de Acero Ortodóntico Redondo",
     description:
       "Arco ortodóntico de acero inoxidable que ofrece control y estabilidad para movimientos dentales precisos en las etapas intermedias y finales del tratamiento.",
@@ -130,7 +130,7 @@ const PRODUCT_OVERRIDES: Record<string, Partial<ProductDetail>> = {
       ],
     },
   },
-  "prevencion-limpieza-4": {
+  "prevencion-limpieza-1": {
     title: "Pieza de Mano de Alta Velocidad con LED de Color y Triple Spray de Agua",
     description:
       "Pieza de mano de alta velocidad con luz LED que ofrece precisión, durabilidad y funcionamiento silencioso. Su triple spray de agua asegura una refrigeración eficiente y el botón de presión facilita el cambio rápido de fresa. Ideal para un desempeño confiable en el consultorio odontológico.",
@@ -151,11 +151,7 @@ const PRODUCT_OVERRIDES: Record<string, Partial<ProductDetail>> = {
   },
 };
 
-const CONTAIN_IMAGES = new Set([
-  "prevencion-limpieza-1",
-  "prevencion-limpieza-2",
-  "prevencion-limpieza-3",
-]);
+const CONTAIN_IMAGES = new Set(["ortodoncia-1", "ortodoncia-2", "ortodoncia-3"]);
 
 function buildProductDetail(cat: Category, src: string, idx: number): ProductDetail {
   const num = idx + 1;
