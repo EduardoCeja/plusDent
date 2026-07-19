@@ -2,6 +2,13 @@
 
 import React, { useEffect, useRef } from "react";
 
+export type SpecTable = {
+  title: string;
+  note?: string;
+  columns: [string, string];
+  rows: [string, string][];
+};
+
 export type ProductDetail = {
   id: string;
   title: string;
@@ -11,6 +18,7 @@ export type ProductDetail = {
   sku?: string;
   price?: string;
   features?: string[];
+  specTable?: SpecTable;
 };
 
 type Props = {
@@ -109,11 +117,16 @@ export default function ProductDetailModal({ open, product, onClose }: Props) {
         <div className="overflow-y-auto">
           <div className="grid gap-6 px-4 sm:px-6 py-5 md:grid-cols-2">
             {/* Imagen */}
-            <div className="overflow-hidden rounded-xl border border-gray-100 bg-gray-50">
+            <div className="flex items-center justify-center overflow-hidden rounded-xl border border-gray-100 bg-gray-50">
               <img
                 src={product.image}
                 alt={product.title}
-                className="h-52 w-full object-cover sm:h-64 md:h-[360px]"
+                className={[
+                  "h-52 w-full sm:h-64 md:h-[360px]",
+                  /prevencion-limpieza\/[123]\.png$/.test(product.image)
+                    ? "object-contain p-6"
+                    : "object-cover",
+                ].join(" ")}
                 loading="lazy"
               />
             </div>
@@ -121,6 +134,37 @@ export default function ProductDetailModal({ open, product, onClose }: Props) {
             {/* Info */}
             <div className="min-w-0">
               <p className="text-sm text-neutral-700">{product.description}</p>
+
+              {product.specTable?.rows.length ? (
+                <div className="mt-4">
+                  <p className="text-sm font-bold text-blue-700">{product.specTable.title}</p>
+                  {product.specTable.note && (
+                    <p className="text-xs text-neutral-500">{product.specTable.note}</p>
+                  )}
+                  <div className="mt-2 overflow-hidden rounded-lg border border-blue-100">
+                    <table className="w-full text-sm">
+                      <thead>
+                        <tr className="bg-blue-50">
+                          <th className="px-3 py-2 text-center font-semibold text-neutral-800">
+                            {product.specTable.columns[0]}
+                          </th>
+                          <th className="px-3 py-2 text-center font-semibold text-neutral-800">
+                            {product.specTable.columns[1]}
+                          </th>
+                        </tr>
+                      </thead>
+                      <tbody>
+                        {product.specTable.rows.map(([a, b], i) => (
+                          <tr key={i} className="border-t border-blue-100">
+                            <td className="px-3 py-2 text-center text-neutral-700">{a}</td>
+                            <td className="px-3 py-2 text-center text-neutral-700">{b}</td>
+                          </tr>
+                        ))}
+                      </tbody>
+                    </table>
+                  </div>
+                </div>
+              ) : null}
 
               <div className="mt-4 space-y-2 text-sm text-neutral-800">
                 {product.sku && (
