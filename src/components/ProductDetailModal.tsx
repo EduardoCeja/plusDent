@@ -91,9 +91,9 @@ export default function ProductDetailModal({ open, product, onClose }: Props) {
       />
 
       {/* Modal */}
-      <div className="relative z-10 w-full max-w-4xl max-h-[90dvh] overflow-hidden rounded-2xl border border-gray-200 bg-white shadow-2xl">
+      <div className="relative z-10 flex w-full max-w-4xl max-h-[90dvh] flex-col overflow-hidden rounded-2xl border border-gray-200 bg-white shadow-2xl">
         {/* Header */}
-        <div className="flex items-start justify-between gap-4 border-b border-gray-100 px-4 sm:px-6 py-4">
+        <div className="flex shrink-0 items-start justify-between gap-4 border-b border-gray-100 px-4 sm:px-6 py-4">
           <div className="min-w-0">
             <p className="text-xs font-semibold uppercase tracking-wide text-blue-700">
               {product.categoryTitle}
@@ -114,7 +114,7 @@ export default function ProductDetailModal({ open, product, onClose }: Props) {
         </div>
 
         {/* Body con scroll interno */}
-        <div className="overflow-y-auto">
+        <div className="min-h-0 flex-1 overflow-y-auto">
           <div className="grid gap-6 px-4 sm:px-6 py-5 md:grid-cols-2">
             {/* Imagen */}
             <div className="flex items-center justify-center overflow-hidden rounded-xl border border-gray-100 bg-gray-50">

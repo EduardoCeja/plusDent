@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import "./globals.css";
+import WhatsAppFloatButton from "@/components/WhatsAppFloatButton";
 
 export const metadata: Metadata = {
   title: "DentalCare | Clínica Odontológica",
@@ -15,6 +16,7 @@ export default function RootLayout({
     <html lang="es">
       <body className="min-h-dvh antialiased text-neutral-800 bg-[radial-gradient(ellipse_at_top,_var(--tw-gradient-stops))] from-sky-50 to-white">
         {children}
+        <WhatsAppFloatButton />
       </body>
     </html>
   );
