@@ -321,7 +321,9 @@ export default function CatalogosDentales() {
 
               <p className="mt-5 text-xs text-neutral-500">
                 Ruta esperada:{" "}
-                <span className="font-mono">/public/img/dental/{selected.id}/1.png</span>
+                <span className="font-mono">
+                  https://pub-ab0247362295454194126dedfa2964d0.r2.dev/1.png
+                </span>
               </p>
             </>
           )}

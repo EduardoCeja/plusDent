@@ -67,11 +67,16 @@ export default function ProductDetailModal({ open, product, onClose }: Props) {
 
   const SELLER_WHATSAPP = "5213322582493";
 
+  const imageUrl = product.image.startsWith("http")
+    ? product.image
+    : `${window.location.origin}${product.image}`;
+
   const waMessage = `Hola 👋, me interesa este producto:
 
 🦷 Producto: ${product.title}
 📂 Categoría: ${product.categoryTitle}
 🔖 SKU: ${product.sku ?? "N/A"}
+🖼️ Imagen: ${imageUrl}
 
 ¿Podrías brindarme más información por favor?`;
 
