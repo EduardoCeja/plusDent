@@ -1,4 +1,4 @@
-const SELLER_WHATSAPP = "5213318527973";
+const SELLER_WHATSAPP = "5213322582493";
 const DEFAULT_MESSAGE = "Hola 👋, me gustaría solicitar información, por favor.";
 
 function buildWhatsAppUrl(phoneE164: string, message: string) {

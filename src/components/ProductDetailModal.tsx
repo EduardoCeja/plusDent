@@ -65,7 +65,7 @@ export default function ProductDetailModal({ open, product, onClose }: Props) {
 
   if (!open || !product) return null;
 
-  const SELLER_WHATSAPP = "5213318527973";
+  const SELLER_WHATSAPP = "5213322582493";
 
   const waMessage = `Hola 👋, me interesa este producto:
 
