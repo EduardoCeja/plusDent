@@ -3,8 +3,11 @@ import "./globals.css";
 import WhatsAppFloatButton from "@/components/WhatsAppFloatButton";
 
 export const metadata: Metadata = {
-  title: "DentalCare | Clínica Odontológica",
+  title: "Plusdent | Clínica & Sonrisas",
   description: "Odontología estética, ortodoncia y cuidado integral en CDMX.",
+  icons: {
+    icon: "/img/Plusdent1.png",
+  },
 };
 
 export default function RootLayout({
